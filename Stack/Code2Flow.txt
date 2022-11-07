@@ -1,0 +1,43 @@
+//At method
+start;
+if (idx < 0 || idx > self.cursor-1) {
+  return end;
+}
+give stos\[idx\];
+return end;
+
+//Find method
+start;
+for (i=0;i<self.size;i++) {
+  if (queue[i] == wanted) {
+	give stos\[i\];
+  	return end;
+  }
+}
+return end;
+
+//Peek method
+start;
+if (self.cursor == 0) {
+  return end;
+}
+give stos\[self.cursor-1\];
+return end;
+
+//Push method
+start;
+if self.cursor == self.size {
+  return end;
+}
+stos\[self.cursor\] = Item;
+self.cursor = self.cursor + 1;
+return end;
+
+//Pop method
+start;
+if self.cursor == 0 {
+  return end;
+}
+self.cursor = self.cursor - 1;
+stos\[self.cursor\] = None;
+return end;

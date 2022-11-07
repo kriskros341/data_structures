@@ -1,0 +1,76 @@
+//Push method
+start;
+if self.top == self.size {
+  return end;
+}
+self.top += 1;
+if not self.roar {
+  self.roar = Item(value);
+  return end;
+}
+roar = self.roar;
+while roar.next {
+  roar = roar.next;
+}
+roar.next = Item(value);
+return end;
+
+//Pop method
+start;
+if idx < 0 or idx > self.size {
+  return end;
+}
+if self.top == 0 {
+  return end;
+}
+self.top -= 1;
+if self.top == 0 {
+  self.roar = None;
+  return end;
+}
+if idx == 0 {
+  self.roar = self.roar.next;
+  return end;
+}
+prev = None
+roar = self.roar
+i = 1;
+while (i != idx) {
+  prev = roar;
+  roar = roar.next
+}
+prev.next = roar.next
+return end;
+
+//Find method
+start;
+roar = self.roar;
+idx = 0;
+while roar {
+  if roar.value == value {
+    give idx;
+    return end;
+  }
+  roar = roar.next;
+  idx += 1;
+}
+return end;
+
+//At method
+start;
+if idx < 0 or idx > self.size-1 {
+  return end;
+}
+if idx >= self.top {
+  give None;
+  return end;
+}
+
+roar = self.roar;
+i = 0;
+while idx != i {
+  roar = roar.next;
+  i += 1
+}
+give roar.value;
+return end;

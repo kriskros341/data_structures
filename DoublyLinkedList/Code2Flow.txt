@@ -1,0 +1,92 @@
+//Push method
+start;
+if self.top == self.size {
+  return end;
+}
+self.top += 1;
+item = Item(value);
+if not self.roar {
+  self.roar = item;
+  self.back = item;
+  return end;
+}
+item.prev = self.back;
+if not self.roar.next {a
+  self.back = item;
+  self.roar.next = self.back;
+  return end;
+}
+self.back.next = item;
+self.back = item;
+return end;
+
+//Pop method
+start;
+if idx < 0 or idx > self.size-1 {
+  return end;
+}
+if self.top == 0 {
+  return end;
+}
+if idx > self.top-1 {
+  return end;
+}
+self.top -= 1;
+if idx == self.top {
+  self.back.prev.next = None;
+  return end;
+}
+if idx == 0 {
+  self.roar = self.roar.next;
+  return end;
+}
+i = 0
+roar = self.roar;
+while (i != idx) {
+  roar = roar.next
+  i += 1
+}
+roar.prev.next= roar.next;
+return end;
+
+//Find method
+start;
+roar = self.roar;
+idx = 0;
+while roar {
+  if roar.value == value {
+    give idx;
+    return end;
+  }
+  roar = roar.next;
+  idx += 1;
+}
+return end;
+
+//At method
+start;
+if idx < 0 or idx > self.size-1 {
+  return end;
+}
+if idx >= self.top {
+  give None;
+  return end;
+}
+
+roar = self.roar;
+i = 0;
+while idx != i {
+  roar = roar.next;
+  i += 1
+}
+give roar.value;
+return end;
+
+//Peek method
+start;
+if not self.back {
+  return end;
+}
+give self.back.value;
+return end;
+

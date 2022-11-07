@@ -1,0 +1,49 @@
+//At method
+start;
+if (idx < 0 || idx > self.cursor-1) {
+  return end;
+}
+give queue\[idx\];
+return end;
+
+//Find method
+start;
+for (i=0;i<self.size;i++) {
+  if (queue[i] == wanted) {
+	give queue\[i\];
+  	return end;
+  }
+}
+return end;
+
+//Pop method
+start;
+if (self.cursor == 0) {
+  return end;
+}
+for (i=0;i<self.size-1;i++) {
+  queue\[i\] = queue\[i+1\];
+  self.prios\[i\] = self.prios\[i+1\]
+}
+queue\[self.cursor\] = None;
+self.prios\[self.cursor\] = None;
+self.cursor = self.cursor - 1;
+return end;
+
+//Push method
+start;
+if (self.cursor >= self.size) {
+  return end;
+}
+queue\[self.cursor\] = Item;
+self.prios\[self.cursor\] = Prio;
+self.cursor = self.cursor + 1;
+return end;
+
+//Peek method
+start;
+if (self.cursor == 0) {
+  return end;
+}
+give queue\[self.cursor-1\];
+return end;
